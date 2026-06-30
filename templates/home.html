@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>
+            AI Powered Plant Disease Detection
+        </h1>
+
+        <p>
+            Upload a leaf image and instantly detect plant diseases with treatment recommendations.
+        </p>
+
+        <div class="upload-area">
+
+            <a href="/upload/" class="upload-btn">
+                📸 Upload Leaf Image & Detect Disease
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="{% static 'images/hero-plants.png' %}"
+             alt="Plants">
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="card">
+        <h2>10</h2>
+        <p>Crop Types</p>
+    </div>
+
+    <div class="card">
+        <h2>87K+</h2>
+        <p>Training Images</p>
+    </div>
+
+    <div class="card">
+        <h2>98.7%</h2>
+        <p>Validation Accuracy</p>
+    </div>
+
+    <div class="card">
+        <h2>38</h2>
+        <p>Disease Classes</p>
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE PLANTAI -->
+
+<section class="features">
+
+    <h2 class="section-title">
+        Why Choose PlantAI?
+    </h2>
+
+    <div class="feature-container">
+
+        <!-- Row 1 -->
+
+        <div class="feature-card">
+            <h3>🌿 Disease Detection</h3>
+            <p>
+                Upload a plant image and instantly detect diseases using advanced AI technology.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📷 Smart Image Upload</h3>
+            <p>
+                Easily upload or drag and drop plant leaf images for quick disease diagnosis.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🧠 AI Disease Detection</h3>
+            <p>
+                Deep Learning model trained on over 87,000 plant images covering 38 disease classes.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>⚡ Fast Processing</h3>
+            <p>
+                Receive highly accurate disease predictions within just a few seconds.
+            </p>
+        </div>
+
+        <!-- Row 2 -->
+
+        <div class="feature-card">
+            <h3>🌾 Crop Protection Insights</h3>
+            <p>
+                View disease descriptions, symptoms, prevention methods, crop health and estimated yield loss.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔒 Secure User Accounts</h3>
+            <p>
+                Secure login system with personalized access to disease detection and prediction history.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📖 Detailed Disease Information</h3>
+            <p>
+                Learn about every detected disease with comprehensive AI-powered recommendations and treatment guidance.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📱 Responsive Design</h3>
+            <p>
+                Optimized for desktops, laptops, tablets and mobile devices with a clean and modern interface.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="features">
+
+    <h2 class="section-title">
+        How It Works
+    </h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <h3>1️⃣ Upload Image</h3>
+            <p>
+                Upload a plant leaf image from your device.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>2️⃣ AI Analysis</h3>
+            <p>
+                Our deep learning model analyzes the uploaded leaf image.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>3️⃣ Disease Detection</h3>
+            <p>
+                The system identifies the disease and predicts the plant's condition.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>4️⃣ Get Recommendations</h3>
+            <p>
+                Receive disease information, symptoms, prevention methods and crop impact analysis.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

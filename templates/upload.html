@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="upload-page">
+
+    <div class="upload-card">
+
+        <h1>
+            🌿 Upload Plant Image
+        </h1>
+
+        <p>
+            Upload a leaf image and let AI detect the disease instantly.
+        </p>
+
+        <form method="POST"
+              enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+           <div id="drop-zone" class="drop-zone">
+
+    <div class="upload-icon">
+        📷
+    </div>
+
+    <h3>
+        Drag & Drop Image Here
+    </h3>
+
+    <p>
+        or click to browse
+    </p>
+
+    <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/*"
+        required
+        hidden>
+
+</div>
+
+            <br>
+
+            <!-- IMAGE PREVIEW -->
+
+            <img
+                id="preview-image"
+                src="#"
+                alt="Preview"
+                style="
+                    display:none;
+                    max-width:350px;
+                    border-radius:15px;
+                    margin:20px auto;
+                    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+                "
+            >
+
+            <br>
+
+            <button
+                type="submit"
+                class="detect-btn">
+
+                🔍 Detect Disease
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+const dropZone =
+document.getElementById(
+    'drop-zone'
+);
+
+const imageInput =
+document.getElementById(
+    'image'
+);
+
+const preview =
+document.getElementById(
+    'preview-image'
+);
+
+dropZone.addEventListener(
+    'click',
+    () => imageInput.click()
+);
+
+imageInput.addEventListener(
+    'change',
+    function(e){
+
+        const file =
+        e.target.files[0];
+
+        showPreview(file);
+
+    }
+);
+
+dropZone.addEventListener(
+    'dragover',
+    function(e){
+
+        e.preventDefault();
+
+        dropZone.classList.add(
+            'drag-active'
+        );
+
+    }
+);
+
+dropZone.addEventListener(
+    'dragleave',
+    function(){
+
+        dropZone.classList.remove(
+            'drag-active'
+        );
+
+    }
+);
+
+dropZone.addEventListener(
+    'drop',
+    function(e){
+
+        e.preventDefault();
+
+        dropZone.classList.remove(
+            'drag-active'
+        );
+
+        const file =
+        e.dataTransfer.files[0];
+
+        imageInput.files =
+        e.dataTransfer.files;
+
+        showPreview(file);
+
+    }
+);
+
+function showPreview(file){
+
+    if(!file) return;
+
+    const reader =
+    new FileReader();
+
+    reader.onload =
+    function(e){
+
+        preview.src =
+        e.target.result;
+
+        preview.style.display =
+        'block';
+
+    }
+
+    reader.readAsDataURL(
+        file
+    );
+
+}
+
+</script>
+
+{% endblock %}

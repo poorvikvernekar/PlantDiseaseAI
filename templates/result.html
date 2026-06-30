@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="upload-page">
+
+    <div class="upload-card">
+
+        <h1>
+            🌱 Prediction Result
+        </h1>
+
+        <br>
+
+        <img
+            src="{{ image_url }}"
+            width="350"
+            style="
+                border-radius:20px;
+                max-width:100%;
+            "
+        >
+
+        <br><br>
+
+        <h2>
+            {{ prediction }}
+        </h2>
+
+        <p style="
+            font-size:18px;
+            color:#666;
+            margin-top:15px;
+            margin-bottom:30px;
+        ">
+            AI analysis completed successfully.
+        </p>
+
+        {% if info %}
+
+        <div class="disease-details">
+
+            <h3>📖 About Disease</h3>
+
+            <p>
+                {{ info.description }}
+            </p>
+
+            <h3>⚠ Signs of Damage</h3>
+
+            <p style="white-space: pre-line;">
+                {{ info.signs_of_damage }}
+            </p>
+
+            <h3>🛡 Prevention</h3>
+
+            <p style="white-space: pre-line;">
+                {{ info.prevention }}
+            </p>
+
+            <div class="health-box">
+
+                <div class="health-card">
+
+                    <h4>🌿 Crop Health</h4>
+
+                    <h2>{{ info.crop_health }}%</h2>
+
+                </div>
+
+                <div class="health-card">
+
+                    <h4>📉 Yield Loss</h4>
+
+                    <h2>{{ info.yield_loss }}%</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <br><br>
+
+        <a href="/upload/" class="analyze-btn">
+            🔍 Analyze Another Image
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

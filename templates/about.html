@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="about-section">
+
+    <div class="about-container">
+
+        <h1 class="about-title">
+            🌱 About PlantAI
+        </h1>
+
+        <p class="about-intro">
+            PlantAI is an AI-powered plant disease detection platform designed
+            to help farmers, gardeners, researchers, and agricultural experts
+            identify plant diseases quickly and accurately through leaf image analysis.
+        </p>
+
+        <p class="about-intro">
+            By leveraging deep learning and computer vision technologies,
+            PlantAI enables early disease detection, helping reduce crop losses,
+            improve productivity, and support smarter agricultural decisions.
+        </p>
+
+        <div class="about-card">
+
+            <h2>🌐 Project Overview</h2>
+
+            <p>
+                PlantAI provides a simple workflow:
+            </p>
+
+            <ul>
+                <li>Upload a plant leaf image</li>
+                <li>AI analyzes the image</li>
+                <li>Disease is identified</li>
+                <li>Results and recommendations are displayed instantly</li>
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>📊 Dataset Information</h2>
+
+            <h3>Original Dataset</h3>
+
+            <ul>
+                <li><strong>Total Images:</strong> 87,000+ RGB Images</li>
+                <li><strong>Classes:</strong> 38 Plant Disease Categories</li>
+                <li><strong>Resolution:</strong> 256 × 256 Pixels</li>
+                <li><strong>Coverage:</strong> Multiple Crops and Diseases</li>
+            </ul>
+
+            <h3>Training Configuration</h3>
+
+            <ul>
+                <li><strong>Training Images:</strong> 70,295 (80%)</li>
+                <li><strong>Validation Images:</strong> 17,572 (20%)</li>
+                <li><strong>Test Images:</strong> 33 Real-World Samples</li>
+                <li><strong>Augmentation:</strong> Rotation, Flipping and Zoom</li>
+                <h3>Supported Crops & Disease Classes</h3>
+
+<p>
+    The AI model has been trained on 38 plant health categories covering
+    multiple crops, diseases, and healthy plant conditions.
+</p>
+
+<ul>
+
+    <li><strong>Apple:</strong> Apple Scab, Black Rot, Cedar Apple Rust, Healthy</li>
+
+    <li><strong>Blueberry:</strong> Healthy</li>
+
+    <li><strong>Cherry:</strong> Powdery Mildew, Healthy</li>
+
+    <li><strong>Corn (Maize):</strong> Cercospora Leaf Spot, Common Rust, Northern Leaf Blight, Healthy</li>
+
+    <li><strong>Grape:</strong> Black Rot, Esca (Black Measles), Leaf Blight, Healthy</li>
+
+    <li><strong>Orange:</strong> Huanglongbing (Citrus Greening)</li>
+
+    <li><strong>Peach:</strong> Bacterial Spot, Healthy</li>
+
+    <li><strong>Bell Pepper:</strong> Bacterial Spot, Healthy</li>
+
+    <li><strong>Potato:</strong> Early Blight, Late Blight, Healthy</li>
+
+    <li><strong>Raspberry:</strong> Healthy</li>
+
+    <li><strong>Soybean:</strong> Healthy</li>
+
+    <li><strong>Squash:</strong> Powdery Mildew</li>
+
+    <li><strong>Strawberry:</strong> Leaf Scorch, Healthy</li>
+
+    <li><strong>Tomato:</strong> Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider Mites, Target Spot, Tomato Yellow Leaf Curl Virus, Tomato Mosaic Virus, Healthy</li>
+
+</ul>
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>🛠 Technical Architecture</h2>
+
+            <ul>
+                <li><strong>Frontend:</strong> HTML5, CSS3, Django Templates</li>
+                <li><strong>Backend:</strong> Django Framework, Python 3</li>
+                <li><strong>Database:</strong> SQLite</li>
+                <li><strong>Authentication:</strong> Django Authentication System</li>
+                <li><strong>AI Framework:</strong> TensorFlow 2.x</li>
+                <li><strong>Model:</strong> Custom CNN (16 Layers)</li>
+                <li><strong>Optimizer:</strong> Adam</li>
+                <li><strong>Epochs:</strong> 50</li>
+                <li><strong>Validation Accuracy:</strong> 98.7%</li>
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>⚡ Key Features</h2>
+
+            <ul>
+                <li>AI-Based Plant Disease Detection</li>
+                <li>Secure User Authentication</li>
+                <li>Disease Prediction History</li>
+                <li>Analytics Dashboard</li>
+                <li>Responsive Web Interface</li>
+                <li>Fast Real-Time Predictions</li>
+                <li>Cloud Deployment Ready</li>
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>🚀 Future Enhancements</h2>
+
+            <ul>
+                <li>Disease Severity Analysis</li>
+                <li>Treatment Recommendations</li>
+                <li>Fertilizer Suggestions</li>
+                <li>WhatsApp Notifications</li>
+                <li>Mobile Application Support</li>
+                <li>Multi-Language Support</li>
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>🎯 Mission</h2>
+
+            <p>
+                Our mission is to make advanced plant disease diagnostics
+                accessible to every farmer through Artificial Intelligence,
+                helping improve crop health, reduce losses, and promote
+                sustainable agriculture.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

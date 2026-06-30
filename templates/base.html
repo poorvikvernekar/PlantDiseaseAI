@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PlantAI</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <div class="top-banner">
+    Identify, Detect & Grow Healthy Plants with PlantAI!
+    </div>
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🌱 PlantAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/upload/">
+                Disease Detection
+            </a>
+
+            <a href="/about/">
+                About
+            </a>
+
+            {% if user.is_authenticated %}
+
+                <a href="#" class="user-link">
+                    👤 {{ user.username }}
+                </a>
+
+                <a href="/logout/" class="logout-btn">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="/login/" class="login-btn">
+                    Login
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </nav>
+
+    <!-- PAGE CONTENT -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <h3>
+            🌱 PlantAI
+        </h3>
+
+        <p>
+            AI Powered Plant Disease Detection Platform
+        </p>
+
+        <p>
+            Built with Django, Machine Learning and Analytics
+        </p>
+
+        <p style="margin-top:15px;">
+            © 2026 PlantAI. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
