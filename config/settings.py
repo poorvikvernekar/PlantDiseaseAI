@@ -139,3 +139,22 @@ STATICFILES_STORAGE = (
     "whitenoise.storage.CompressedManifestStaticFilesStorage"
 )
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# ==========================
+# EMAIL SETTINGS
+# ==========================
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.gmail.com"
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "poorvikvernekar@gmail.com"
+
+EMAIL_HOST_PASSWORD = "vmbj dsvc vcsy ftnt"
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = "PlantAI <poorvikvernekar@gmail.com>"
+DEFAULT_FROM_EMAIL = "PlantAI <poorvikvernekar@gmail.com>"

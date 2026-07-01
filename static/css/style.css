@@ -152,9 +152,9 @@ body{
     flex-wrap:wrap;
 }
 
-/* CARD */
+/* CARD (Home Page Stats Only) */
 
-.card{
+.stats .card{
     background:#ffffff;
 
     width:220px;
@@ -175,13 +175,13 @@ body{
     transition:0.3s ease;
 }
 
-.card:hover{
+.stats .card:hover{
     transform:translateY(-8px);
 }
 
 /* NUMBER */
 
-.card h2{
+.stats .card h2{
     font-size:52px;
 
     color:#19e3c1;
@@ -195,7 +195,7 @@ body{
 
 /* TEXT */
 
-.card p{
+.stats .card p{
     font-size:18px;
 
     color:#222;

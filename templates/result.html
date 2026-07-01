@@ -1,78 +1,105 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<div class="upload-page">
+<link rel="stylesheet" href="{% static 'css/result.css' %}">
 
-    <div class="upload-card">
+<div class="result-page">
 
-        <h1>
-            🌱 Prediction Result
-        </h1>
+    <!-- ================= HEADER ================= -->
 
-        <br>
+    <section class="report-header">
 
-        <img
-            src="{{ image_url }}"
-            width="350"
-            style="
-                border-radius:20px;
-                max-width:100%;
-            "
-        >
+        <h1>🌿 AI Plant Health Report</h1>
 
-        <br><br>
-
-        <h2>
-            {{ prediction }}
-        </h2>
-
-        <p style="
-            font-size:18px;
-            color:#666;
-            margin-top:15px;
-            margin-bottom:30px;
-        ">
-            AI analysis completed successfully.
+        <p>
+            Deep Learning powered disease analysis with intelligent crop health insights.
         </p>
 
-        {% if info %}
+    </section>
 
-        <div class="disease-details">
+    <!-- ================= TOP SECTION ================= -->
 
-            <h3>📖 About Disease</h3>
+    <section class="top-section">
 
-            <p>
-                {{ info.description }}
-            </p>
+        <!-- Uploaded Image -->
 
-            <h3>⚠ Signs of Damage</h3>
+        <div class="card image-card">
 
-            <p style="white-space: pre-line;">
-                {{ info.signs_of_damage }}
-            </p>
+            <img src="{{ image_url }}" alt="Uploaded Leaf">
 
-            <h3>🛡 Prevention</h3>
+        </div>
 
-            <p style="white-space: pre-line;">
-                {{ info.prevention }}
-            </p>
+        <!-- Prediction -->
 
-            <div class="health-box">
+        <div class="card prediction-card">
 
-                <div class="health-card">
+            <span class="status-chip">
+                AI Analysis Complete
+            </span>
 
-                    <h4>🌿 Crop Health</h4>
+            <h2>{{ prediction }}</h2>
 
-                    <h2>{{ info.crop_health }}%</h2>
+            <!-- Confidence -->
+
+            <div class="metric">
+
+                <div class="metric-head">
+
+                    <span>🎯 Confidence</span>
+
+                    <span>98.7%</span>
 
                 </div>
 
-                <div class="health-card">
+                <div class="progress">
 
-                    <h4>📉 Yield Loss</h4>
+                    <div class="progress-fill confidence"></div>
 
-                    <h2>{{ info.yield_loss }}%</h2>
+                </div>
+
+            </div>
+
+            <!-- Crop Health -->
+
+            <div class="metric">
+
+                <div class="metric-head">
+
+                    <span>🌿 Crop Health</span>
+
+                    <span>{{ crop_health }}%</span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div class="progress-fill health"></div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Stats -->
+
+            <div class="prediction-footer">
+
+                <div class="mini-card">
+
+                    <small>Severity</small>
+
+                    <div class="severity-badge">
+                        Medium
+                    </div>
+
+                </div>
+
+                <div class="mini-card">
+
+                    <small>Estimated Yield Loss</small>
+
+                    <h3>{{ yield_loss }}%</h3>
 
                 </div>
 
@@ -80,16 +107,98 @@
 
         </div>
 
-        {% endif %}
+    </section>
 
-        <br><br>
+    <!-- ================= AI SUMMARY ================= -->
 
-        <a href="/upload/" class="analyze-btn">
-            🔍 Analyze Another Image
+    <section class="card">
+
+        <h3>🧠 AI Summary</h3>
+
+        <p>
+
+            The uploaded plant leaf has been successfully analyzed using our Deep Learning model.
+            Early detection improves treatment success and minimizes crop damage.
+
+        </p>
+
+    </section>
+
+    <!-- ================= DESCRIPTION ================= -->
+
+    <section class="double-grid">
+
+        <div class="card">
+
+            <h3>📖 Disease Description</h3>
+
+            <p>
+
+                {{ description }}
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🩺 Signs & Symptoms</h3>
+
+            <p>
+
+                {{ signs }}
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PREVENTION ================= -->
+
+    <section class="card">
+
+        <h3>🛡 Prevention</h3>
+
+        <p>
+
+            {{ prevention }}
+
+        </p>
+
+    </section>
+
+    <!-- ================= RECOMMENDATION ================= -->
+
+    <section class="card recommendation-card">
+
+        <h3>🌱 Plant Care Recommendation</h3>
+
+        <p>
+            Apply the recommended preventive measures immediately. Monitor the crop regularly and remove infected leaves to reduce disease spread. Early treatment helps protect crop health and minimize yield loss.
+       </p>
+
+    </section>
+
+    <!-- ================= BUTTONS ================= -->
+
+    <div class="button-group">
+
+        <a href="/upload/" class="primary-btn">
+
+            📸 Analyze Another Leaf
+
+        </a>
+
+            <a href="{% url 'download_report' %}" class="secondary-btn">
+            📄 Download Report
+
         </a>
 
     </div>
 
 </div>
+
+<script src="{% static 'js/result.js' %}"></script>
 
 {% endblock %}

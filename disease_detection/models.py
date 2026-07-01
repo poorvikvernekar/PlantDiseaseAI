@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class DiseaseInfo(models.Model):
 
     disease_name = models.CharField(
@@ -13,6 +12,8 @@ class DiseaseInfo(models.Model):
     signs_of_damage = models.TextField()
 
     prevention = models.TextField()
+
+    recommendation = models.TextField()   # <-- Add this
 
     crop_health = models.IntegerField()
 
