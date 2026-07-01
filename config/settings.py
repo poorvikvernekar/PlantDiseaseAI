@@ -22,16 +22,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#%2iqma84pvugz92_&z4^y(56$&fs-5laofn4=f@3vh!cw0f45'
-
+SECRET_KEY = os.getenv(
+    "SECRET_KEY",
+    "django-insecure-#%2iqma84pvugz92_&z4^y(56$&fs-5laofn4=f@3vh!cw0f45"
+)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    ".onrender.com",
-]
+DEBUG = os.getenv("DEBUG", "True") == "True"
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS",
+    "127.0.0.1,localhost,.onrender.com"
+).split(",")
 
 
 # Application definition
@@ -138,3 +138,4 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = (
     "whitenoise.storage.CompressedManifestStaticFilesStorage"
 )
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
