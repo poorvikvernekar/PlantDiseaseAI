@@ -27,14 +27,16 @@ SECRET_KEY = os.getenv(
     "django-insecure-#%2iqma84pvugz92_&z4^y(56$&fs-5laofn4=f@3vh!cw0f45"
 )
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "True") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     ".onrender.com",
     ".up.railway.app",
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.up.railway.app",
+]
 
 # Application definition
 
@@ -158,5 +160,5 @@ EMAIL_HOST_USER = "poorvikvernekar@gmail.com"
 EMAIL_HOST_PASSWORD = "vmbj dsvc vcsy ftnt"
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-SERVER_EMAIL = "PlantAI <poorvikvernekar@gmail.com>"
-DEFAULT_FROM_EMAIL = "PlantAI <poorvikvernekar@gmail.com>"
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
